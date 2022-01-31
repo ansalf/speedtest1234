@@ -58,6 +58,10 @@ function refreshGrid() {
 function resetGrid() {
   //Reset all values to 0 in the grid array
   //ADD CODE HERE
+  let discs = document.getElementsByClassName("disc");git a
+  for (let i = 0; i < discs.length; i++) {
+    discs[i].style.backgroundColor = "#129104";
+  }
 }
 
-refreshGrid();
+// refreshGrid();

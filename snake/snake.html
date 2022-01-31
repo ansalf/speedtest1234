@@ -34,8 +34,8 @@
   <body>
       <div>
           <div>
-            <h1>snakee dan icon</h1>
-            <h2>intruction</h2>
+            <h1>Basic Snake HTML Game</h1>
+            <h2>Score : <span id="score">0</span></h2>
             <ul>
                 <li>1. gunakan panash untuk menjalaknakn sanke</li>
                 <li>1. gunakan panash untuk menjalaknakn sanke</li>
@@ -54,6 +54,7 @@
 
       var grid = 16;
       var count = 0;
+      var score = 0;
 
       var snake = {
         x: 160,
@@ -135,6 +136,8 @@
             // canvas is 400x400 which is 25x25 grids
             apple.x = getRandomInt(0, 25) * grid;
             apple.y = getRandomInt(0, 25) * grid;
+            score += 1;
+            document.getElementById("score").innerHTML = score;
           }
 
           // check collision with all cells after this one (modified bubble sort)
@@ -150,6 +153,8 @@
 
               apple.x = getRandomInt(0, 25) * grid;
               apple.y = getRandomInt(0, 25) * grid;
+              score = 0;
+              document.getElementById("score").innerHTML = score;
             }
           }
         });
