@@ -1,0 +1,162 @@
+*{
+    box-sizing: border-box;
+}
+#example-element1 {
+  width: 240px;
+  height: 240px;
+  transform-style: preserve-3d;
+  transition: transform 10s;
+  transition-timing-function: linear;
+  transform: rotate3d(1, 1, 1, 0deg);
+  /* margin: 100px auto; */
+  margin-left: 450px;
+  margin-top: 200px;
+  float: left;
+}
+#example-element2 {
+  width: 240px;
+  height: 240px;
+  transform-style: preserve-3d;
+  transition: transform 10s;
+  transition-timing-function: linear;
+  transform: rotate3d(1, 1, 1, 0deg);
+  /* margin: 100px auto; */
+  margin-right: 450px;
+  margin-top: 200px;
+  float: right;
+}
+
+@keyframes cube {
+  from{
+      transform: rotateY(0deg);
+  }
+  to{
+      transform: rotateY(360deg);
+  }
+}
+
+@keyframes cubes {
+    from{
+        transform: rotateX(0deg);
+    }
+    to{
+        transform: rotateX(360deg);
+    }
+  }
+
+.small-element-1 {
+  width: 80px;
+  height: 80px;
+  /*transform-style: preserve-3d;
+  transition: transform 1.5s;
+  transform: rotate3d(1, 1, 1, 30deg);*/
+
+  background: #fa5252;
+  border: 3px solid white;
+}
+
+.small-element-2 {
+  width: 80px;
+  height: 80px;
+  /*transform-style: preserve-3d;
+  transition: transform 1.5s;
+  transform: rotate3d(1, 1, 1, 30deg);*/
+
+  background: #f76707;
+  border: 3px solid white;
+}
+
+.small-element-3 {
+  width: 80px;
+  height: 80px;
+  /*transform-style: preserve-3d;
+  transition: transform 1.5s;
+  transform: rotate3d(1, 1, 1, 30deg);*/
+
+  background: #12b886 ;
+  border:3px solid white;
+}
+.small-element-4 {
+  width: 80px;
+  height: 80px;
+  /*transform-style: preserve-3d;
+  transition: transform 1.5s;
+  transform: rotate3d(1, 1, 1, 30deg);*/
+
+  background: #4c6ef5 ;
+  border:3px solid white;
+}
+.small-element-5 {
+  width: 80px;
+  height: 80px;
+  /*transform-style: preserve-3d;
+  transition: transform 1.5s;
+  transform: rotate3d(1, 1, 1, 30deg);*/
+
+  background: #fab005 ;
+  border:3px solid white;
+}
+.small-element-6 {
+  width: 80px;
+  height: 80px;
+  /*transform-style: preserve-3d;
+  transition: transform 1.5s;
+  transform: rotate3d(1, 1, 1, 30deg);*/
+
+  background: #7950f2 ;
+  border:3px solid white;
+}
+
+
+#example-element1:hover,
+#example-element1:focus {
+  /*transform: rotate3d(1, 1, 1, 30deg)
+    matrix3d(1, 0, 0, 0, 0, 1, 6, 0, 0, 0, 1, 0, 50, 100, 0, 1.1);*/
+  animation-name: cube;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+#example-element2:hover,
+#example-element2:focus {
+  /*transform: rotate3d(1, 1, 1, 30deg)
+    matrix3d(1, 0, 0, 0, 0, 1, 6, 0, 0, 0, 1, 0, 50, 100, 0, 1.1);*/
+  animation-name: cubes;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+.face {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: inherit;
+  font-size: 60px;
+  color: white;
+}
+
+.front {
+  transform: translateZ(120px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(120px);
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(120px);
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(120px);
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(120px);
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(120px);
+}
